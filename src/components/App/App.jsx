@@ -9,20 +9,20 @@ import './App.css'
 const App = () => {
 
     const data = [
-        {name: 'Dima Arhei', salary: 11000, increase: true, id: 1 },
-        {name: 'Nikita Kornyushin', salary: 3000, increase: false, id: 2 },
-        {name: 'Dima Poroh', salary: 4000, increase: false, id: 3 },
+        { name: 'Dima Arhei', salary: 11000, increase: true, id: 1 },
+        { name: 'Nikita Kornyushin', salary: 3000, increase: false, id: 2 },
+        { name: 'Dima Poroh', salary: 4000, increase: false, id: 3 },
     ]
 
     return (
         <div className='app'>
-            <AppInfo/>
+            <AppInfo />
             <div className="search-panel">
-                <SearchPanel/>
-                <AppFilter/>
+                <SearchPanel />
+                <AppFilter />
             </div>
-            <EmployesList data={data}/>
-            <EmployesAddForm/>
+            <EmployesList data={data} />
+            <EmployesAddForm />
         </div>
     );
 }
