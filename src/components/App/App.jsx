@@ -71,7 +71,7 @@ class App extends Component {
             return items;
         }
 
-        return items.filter(item => item.name.indexOf(term) > -1)
+        return items.filter(item => item.name.toLowerCase().indexOf(term.toLowerCase()) > -1)
     }
 
     onUpdateFilter = (filter) => {
@@ -90,8 +90,11 @@ class App extends Component {
 
     }
 
-    onToggleRise = (id) => {
-        console.log(`Rise this ${id}`)
+    onChangeSalary = (id, e) => {
+        const item = this.state.data.find(item => item.id === id);
+        item.salary = e.target.value;
+        const newData = [...this.state.data.filter(item => item.id !== id), item];
+        this.setState({ data: newData })
     }
 
     render() {
@@ -111,6 +114,7 @@ class App extends Component {
                     data={visibleData}
                     onDelete={this.deleteItem}
                     onToggleProp={this.onToggleProp}
+                    onChangeSalary={this.onChangeSalary}
                 />
                 <EmployesAddForm onAdd={this.addItem} />
             </div>
